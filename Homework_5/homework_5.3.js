@@ -4,8 +4,8 @@
 
 
 const questioPrompt = prompt("Введите число от 1 до 100")
-const promptToString = Number(questioPrompt)
+const promptToNumber = Number(questioPrompt)
 
-for (let a = 1; a <= promptToString; a++) {
-  console.log(a)
+for (let firstValue = 1; firstValue <= promptToNumber; firstValue++) {
+  console.log(firstValue)
 }
