@@ -1,4 +1,22 @@
 /*
+ДЗ 6.1. Написати функцію видалення масиву символів
+
+Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом.
+'func(" hello world", ['l', 'd'])' поверне нам "heo wor". 
+Вихідний рядок та символи для видалення задає користувач.
+*/
+
+function func(string, [value1, value2]) {
+  const strToArr = string.split('')
+  const filter = strToArr.filter((symbol) => symbol !== value1 && symbol !== value2)
+  const arrToString = filter.join('')
+  console.log(arrToString)
+}
+
+
+func('hello world', ['l', 'w'])
+
+/*
 ДЗ 6.2. Визначення середнього арифметичного.
 
 Дано масив з елементами різних типів. 
