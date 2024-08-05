@@ -51,3 +51,40 @@ function changeColor() {
 
   btnColor = !btnColor
 }
+
+/*
+ДЗ 11.3. Отримання випадкового зображення
+
+Покласти в папку будь-які зображення 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg, 7.jpg, 8.jpg, 9.jpg.
+Вивести зображення, отримане випадковим чином (Math.random)
+*/
+
+
+const container = document.createElement('div')
+container.className = 'container'
+document.body.appendChild(container)
+
+const inner = document.createElement('div')
+container.appendChild(inner)
+inner.className = 'inner'
+
+const img = document.createElement('img')
+img.className = 'img'
+inner.appendChild(img)
+
+const button = document.createElement('button')
+button.setAttribute('type', 'button')
+button.textContent = 'Change item'
+button.className = 'button'
+container.appendChild(button)
+
+button.addEventListener('click', showRandomValue)
+
+const names = ['./img/1.jpg', './img/2.jpg', './img/3.jpg', './img/4.jpg', './img/5.jpg', './img/6.jpg', './img/7.jpg']
+
+function showRandomValue(arr) {
+
+  const arrIndex = Math.floor((Math.random()) * names.length);
+  img.setAttribute('src', names[arrIndex]);
+
+}
