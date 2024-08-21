@@ -1,4 +1,47 @@
 /*
+ДЗ 12.1. Переход на сторінку
+
+На сторінці є дві кнопки. При натисканні на першу кнопку користувач повинен ввести в prompt посилання, 
+при натисканні на другу – переадресовується на інший сайт (за раніше введеним посиланням).
+*/
+
+const body = document.body;
+
+const btnUrl = document.createElement('button');
+body.appendChild(btnUrl);
+
+const redirectBtn = document.createElement('button');
+body.appendChild(redirectBtn);
+
+btnUrl.textContent = 'Enter URL';
+btnUrl.setAttribute('type', 'button');
+
+redirectBtn.textContent = 'Redirect URL';
+redirectBtn.setAttribute('type', 'submit');
+
+let valueUrl = '';
+
+btnUrl.addEventListener('click', function () {
+  const inputUrl = prompt('Enter URL:');
+
+  if (inputUrl === null || inputUrl.trim() === '') {
+    alert("You have not entered a URL");
+  } else {
+    valueUrl = inputUrl;
+    alert('URL saved');
+  }
+});
+
+redirectBtn.addEventListener('click', function () {
+  if (valueUrl === '') {
+    alert('Empty URL. Please enter a URL first.');
+  } else {
+    location.assign(valueUrl);
+  }
+});
+
+
+/*
 ДЗ 12.2. Використання подій
 
 Створіть HTML-сторінку з декількома кнопками. Ваше завдання - створити обробник подій для батьківського елементу, який відслідковуватиме кліки на всіх кнопках.
