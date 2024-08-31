@@ -25,7 +25,29 @@ console.log(sum(6))
 console.log(sum(10))
 console.log(sum(7))
 
+/*
+ДЗ 7.2. Добуток через карування
 
+Створити функцію для розрахунку добутку двох чисел, що викликається так: name(5)(2). 
+Функція повинна повертати результат (у середині функції не має бути консоль лога!)
+*/
+
+// 1-й вариант
+function carring(a) {
+  return function (b) {
+    return a * b;
+  }
+}
+
+const result = carring(5)(2);
+console.log(result);
+
+
+// 2-вариант 
+const carring1 = a => b => a * b;
+
+const result1 = carring1(5)(2);
+console.log(result1);
 
 
 /*
