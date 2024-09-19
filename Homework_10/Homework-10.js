@@ -38,3 +38,42 @@ for (const key of arr) {
 console.log('newArr', newArr)
 console.log('arr', arr)
 
+/* ДЗ 10.3. Книга контактів
+
+Створіть об'єкт, який матиме одну властивість з масивом об'єктів. Які представляють контакти у вашій контактній книзі. 
+Кожен об'єкт має містити ім'я, номер телефону та адресу електронної пошти. Додайте метод для пошуку контакту за ім'ям та метод для додавання нових контактів.
+*/
+
+const obj = {
+  contact: [{
+    name: 'John',
+    phone: 1235485665,
+    email: 'johnsmit2123@mail.com',
+  }, {
+    name: 'Alice',
+    phone: 1235716555,
+    email: 'alice-luisiana@mail.com'
+  }, {
+    name: 'Bob',
+    phone: 1865716578,
+    email: 'bobmorley@mail.com'
+  },],
+  addContact(name, phone, email) {
+    const newContact = {
+      name: name,
+      phone: phone,
+      email: email,
+    };
+    this.contact.push(newContact);
+  },
+  searchContact(name) {
+    let findContact = {};
+    for (const contact of this.contact) {
+      if (contact.name === name) {
+        findContact = contact;
+        break;
+      }
+    }
+    return findContact;
+  },
+}
