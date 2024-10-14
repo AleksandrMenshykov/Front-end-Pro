@@ -64,4 +64,46 @@ const coach1 = new Coach('John Doe', 'Fitness', 4.7);
 console.log(coach1)
 coach1.displayInfo()
 
+/*
+ДЗ 17.3. Клас "Банківський рахунок"
 
+Створіть клас BankAccount, який буде представляти банківський рахунок. Додайте властивість балансу та методи для внесення та зняття грошей.
+*/
+
+class BankAccount {
+
+  #balance;
+
+  constructor(summ = 0) {
+    this.#balance = summ;
+  }
+
+  getBalance() {
+    return this.#balance
+  }
+
+  deposit(summ) {
+    return this.#balance += summ
+  }
+
+  withdraw(summ) {
+    if (summ > this.#balance) {
+      console.log(`У вас недостаточно денег на счету`)
+    } else if (summ <= this.#balance) {
+      return this.#balance -= summ
+    }
+  }
+
+}
+
+const account1 = new BankAccount(1000);
+
+console.log(account1.getBalance()); // 1000
+
+account1.deposit(500);
+
+console.log(account1.getBalance()); // 1500
+
+account1.withdraw(200);
+
+console.log(account1.getBalance()); // 1300
